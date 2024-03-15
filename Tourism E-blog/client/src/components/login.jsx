@@ -1,8 +1,10 @@
 import axios from 'axios'
 import { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from '../hooks/Authcontext';
 
 const Login = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
     const [formData, SetFormData] = useState({
         email:'',
@@ -16,8 +18,9 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            await axios.post(`http://localhost:8000/login`,
+            const response = await axios.post(`http://localhost:8000/login`,
             formData);
+            login(response.data.token);
             navigate('/');
         }catch(e) {
             console.error(e);

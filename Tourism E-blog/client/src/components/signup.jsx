@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/Authcontext";
 
 const Signup = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
     const [formData,setFormData] = useState({
         username:'',
@@ -17,8 +19,9 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            await axios.post(`http://localhost:8000/register`,
-            formData)
+            const response = await axios.post(`http://localhost:8000/register`,
+            formData);
+            login(response.data.token);
             navigate('/');
     }catch(e){
         console.error('error sending data',e);
