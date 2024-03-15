@@ -23,7 +23,7 @@ class UserController extends Controller
                     'password' => $req->input('password'),
                 ]
             );
-            $token = $user->createToken('token')->plainTextToken;
+            $token = $user->createToken('token', ['*'], now()->addHours(12))->plainTextToken;
             return response()->json(['message' => 'User signed up successfully', 'token' => $token], 201);
         } catch (Exception $e) {
             Log::error('Exception: ' . $e->getMessage());
@@ -38,7 +38,8 @@ class UserController extends Controller
             if (!$user || !User::checkpass($req->password, $user->password)) {
                 return response()->json(["error" => "Email or Password is invalid"], 400);
             }
-            $token = $user->createToken('token-name')->plainTextToken;
+            $user->tokens->each->delete();
+            $token = $user->createToken('token', ['*'], now()->addHours(12))->plainTextToken;
             return response()->json(['message' => "Logged in successfully", 'token' => $token], 200);
         } catch (Exception $e) {
             Log::error('Exception: ' . $e->getMessage());
