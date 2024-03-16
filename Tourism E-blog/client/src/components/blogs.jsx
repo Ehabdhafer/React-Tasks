@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 const Blogs = () => {
-    const [blogs,setBlogs] = useState([]);
+    const [blogs,setBlogs] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,7 +20,7 @@ const Blogs = () => {
     },[]);
 
     if(!blogs){
-        return <div>Loading ...</div>;
+        return <div className="text-2xl">Loading ...</div>;
     }
 
     return (
