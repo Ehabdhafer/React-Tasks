@@ -23,6 +23,7 @@ class BlogController extends Controller
                 $req->input('city'),
                 $req->input('description'),
                 $user->user_id,
+                $req->image,
             );
             return response()->json(['message' => 'Blog added successfully', $f], 201);
         } catch (Exception $e) {

@@ -13,13 +13,16 @@ class BlogModel extends Model
     protected $table = 'blogtable';
     protected $primaryKey = 'blog_id';
     protected $fillable = [
-        'author', 'title', 'city', 'description', 'is_deleted', 'user_id'
+        'author', 'title', 'city', 'description', 'is_deleted', 'user_id', 'image'
     ];
 
-    protected static function createblog($author, $title, $city, $description, $user_id)
+    protected static function createblog($author, $title, $city, $description, $user_id, $image)
     {
         try {
-            return self::create(['author' => $author, 'title' => $title, 'city' => $city, 'description' => $description, 'user_id' => $user_id,]);
+            return self::create([
+                'author' => $author, 'title' => $title, 'city' => $city,
+                'description' => $description, 'user_id' => $user_id, 'image' => $image
+            ]);
         } catch (QueryException $e) {
             throw $e;
         }
