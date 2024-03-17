@@ -6,6 +6,7 @@ import Signup from "./components/signup";
 import { AuthProvider } from "./hooks/Authcontext";
 import Home from "./components/home";
 import BlogDetails from "./components/blogdetails";
+import AddBlog from "./components/addblog";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/:blogId" element={<BlogDetails />} />
+            <Route exact path="/addblog" element={<AddBlog />} />
           </Routes>
         </div>
       </BrowserRouter>
