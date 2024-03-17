@@ -46,8 +46,8 @@ const BlogDetails = () => {
                 />
               </div>
             </div>
-            <div className="md:flex-1 px-4">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+            <div className="md:flex-1 px-4 text-left">
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 text-center">
                 Blog Title : {blogs.title.charAt(0).toUpperCase()+ blogs.title.slice(1)}
               </h2>
               <div className="mb-4 mt-6">
@@ -84,9 +84,9 @@ const BlogDetails = () => {
               </div>
               <div>
                 <span className="font-bold text-gray-700 dark:text-gray-300">
-                  Product Description:
+                  Blog Description:
                 </span>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">
+                <p className="text-gray-600 dark:text-gray-300 text-sm mt-2 text-left">
                   {blogs.description}
                 </p>
               </div>
