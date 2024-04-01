@@ -9,7 +9,7 @@ const Hero = () => {
       <img
         src="https://tailwindpractice-easybank.netlify.app/images/image-mockups.png"
         alt="hero"
-        className="h-full "
+        className="h-full"
       />
     </div>
   );
