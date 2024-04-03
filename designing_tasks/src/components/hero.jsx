@@ -1,15 +1,24 @@
 const Hero = () => {
   return (
-    <div className="px-28 mt-2 flex flex-wrap justify-between h-[500px]">
-      <div>
-        <p>Next generation digital banking</p>
-        <p>Next generation digital banking</p>
-        <p>Next generation digital banking</p>
+    <div className=" xl:pl-28 mt-2 flex flex-wrap justify-between h-[500px] bg-neutral-50 ">
+      <div className="flex flex-wrap flex-col justify-center gap-9">
+        <p className="text-7xl w-[40rem]">Next generation digital banking</p>
+        <p className=" text-xl w-[40rem]">
+          Take your financial life online. Your Easybank account will be a
+          one-stop-shop for spending, saving, budgeting, investing, and much
+          more.
+        </p>
+        <button
+          className="border text-white rounded-3xl w-40 h-12 
+          bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-300 hover:to-blue-300 hover:duration-500"
+        >
+          Request Invite
+        </button>
       </div>
       <img
         src="https://tailwindpractice-easybank.netlify.app/images/image-mockups.png"
         alt="hero"
-        className="h-full"
+        className="h-full object-none xl:w-[40rem]"
       />
     </div>
   );
