@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className=" xl:pl-28 mt-2 flex flex-wrap justify-between h-[500px] bg-neutral-50 ">
+    <div className=" xl:pl-28 mt-2 flex flex-wrap justify-between min-h-[500px] bg-neutral-50 ">
       <div className="flex flex-wrap flex-col justify-center gap-9">
         <p className="text-7xl xl:w-[40rem] lg:w-96">
           Next generation digital banking
@@ -20,7 +20,7 @@ const Hero = () => {
       <img
         src="https://tailwindpractice-easybank.netlify.app/images/image-mockups.png"
         alt="hero"
-        className="h-full object-none xl:w-[40rem] lg:w-[35%]"
+        className="h-[500px] object-none xl:w-[40rem] lg:w-[35%]"
       />
     </div>
   );
