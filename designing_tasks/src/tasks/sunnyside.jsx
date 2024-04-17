@@ -1,7 +1,9 @@
+import Header2 from "../components/header2";
+
 const SunnySide = () => {
   return (
     <div>
-      <div></div>
+      <Header2 />
     </div>
   );
 };
